@@ -2,12 +2,17 @@
   "name": "ms-plant-service",
   "version": "1.0.0",
   "private": true,
-  "description": "MS Plant Service website (static HTML/CSS/JS).",
+  "type": "module",
+  "description": "MS Plant Service website (static HTML/CSS/JS, built with Vite).",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "preview": "python3 -m http.server 4173 --directory dist"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "6.4.5"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
