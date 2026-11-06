@@ -191,6 +191,24 @@
     });
   }
 
+  /* ---- Gentle parallax on the statement band (skipped for reduced motion) ---- */
+  var px = document.querySelector("[data-parallax]");
+  if (px && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var ticking = false;
+    var move = function () {
+      var r = px.parentElement.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < window.innerHeight) {
+        var p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+        px.style.transform = "translate3d(0," + (p * -8).toFixed(2) + "%,0)";
+      }
+      ticking = false;
+    };
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(move); }
+    }, { passive: true });
+    move();
+  }
+
   var y = document.querySelector("[data-year]");
   if (y) y.textContent = new Date().getFullYear();
 })();
