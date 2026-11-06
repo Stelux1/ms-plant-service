@@ -15,4 +15,9 @@ Open http://localhost:4173.
 
 ## Deploy
 
-Upload `site/` to any static host (Netlify, Cloudflare Pages, Vercel). To send the quote form directly, set `data-endpoint` on the `<form>` in `site/index.html`. Without it, the form opens the visitor's email app.
+`npm run build` copies `site/` to `dist/`. It has no dependencies.
+
+- **Shipvela, Netlify, Vercel, Cloudflare Pages:** build command `npm run build`, output directory `dist`.
+- **Any static host without a build step:** upload `site/` as is.
+
+To send the quote form directly, set `data-endpoint` on the `<form>` in `site/index.html`. Without it, the form opens the visitor's email app.

@@ -1,0 +1,13 @@
+{
+  "name": "ms-plant-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MS Plant Service website (static HTML/CSS/JS).",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "python3 -m http.server 4173 --directory dist"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

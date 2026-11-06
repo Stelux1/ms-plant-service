@@ -2,3 +2,5 @@
 .claude/
 site-v1-backup/
 originals/
+dist/
+node_modules/
